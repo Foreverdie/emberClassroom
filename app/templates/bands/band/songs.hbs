@@ -1,0 +1,33 @@
+<div name="droite" class="float-left" >
+  <ul class="" style="width:500px;">
+    {{#each model.songs as |song|}} {{!--on récupère le modèle--}}
+      <li class="list-reset text-xl leading-loose bg-teal-darkest rounded-lg mt-4 pl-8 pr-8 ml-8 shadow-lg">
+        <div class="flex flex-row justify-between items-center">
+          <div>{{song.title}}</div>
+          <StarRating @rating={{song.rating}} @maxRating="5" @onClick={{action "updateRating" song}}></StarRating>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+{{!-- {{outlet}} --}}
+<div class="float-right">
+  <form onSubmit={{action "saveSong"}}>
+    {{#if isAddingSong}}
+      <div>
+        <span>{{input value=newSongName class="h-8"}}</span>
+        <button disabled={{isAddButtonDisabled}} class="bg-teal hover:bg-teal-light text-teal-darker font-bold py-2 px-4 rounded pt-4">Add song</button>
+        <button class="bg-teal hover:bg-teal-light text-teal-darker font-bold py-2 px-4 rounded pt-4" onclick={{action "cancelSong"}}>Cancel</button>
+      </div>
+    {{else}}
+      <div>
+        <div onclick={{action "addSong"}}>
+          Add new song
+          <svg class="h-4 w-4 fill-current text-white inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M15.75 8l-3.74-3.75a3.99 3.99 0 0 1 6.82-3.08A4 4 0 0 1 15.75 8zm-13.9 7.3l9.2-9.19 2.83 2.83-9.2 9.2-2.82-2.84zm-1.4 2.83l2.11-2.12 1.42 1.42-2.12 2.12-1.42-1.42zM10 15l2-2v7h-2v-5z" />
+          </svg>
+        </div>
+      </div>
+    {{/if}}
+  </form>
+</div>
