@@ -1,7 +1,7 @@
 <div name="gauche" class="float-left">
   <ul>
     {{#each model as |band|}}
-      <li class="list-reset text-xl leading-loose bg-teal-darkest mt-4 pl-8 pr-8 ml-8 shadow-lg rounded-lg">
+      <li class="list-reset text-xl leading-loose bg-teal-darkest mt-4 pl-8 pr-8 ml-8 shadow-lg rounded-lg band">
         <div class="flex flex-row justify-between">
           {{!-- Première valeur le texte que l'on affiche, deuxième valeur la route, le troisième est le slug --}}
           {{link-to band.name "bands.band.songs" band.id class="text-white no-underline hover:text-white"}}

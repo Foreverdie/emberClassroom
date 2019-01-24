@@ -18,8 +18,9 @@ module('Acceptance | bands', function(hooks) {
     this.server.create('band', {name:"YOLOOOOOO's band"});
     await visit("/");
 
-    let bandLinks = document.querySelectorAll("band");
+    let bandLinks = document.querySelectorAll(".band");
 
     assert.equal(bandLinks.length, 2, "All bands are rendered");
+    assert.ok(bandLinks[0].textContent.includes("Pierre's band"), "Le text du premier élément est bien identique");
   });
 });
