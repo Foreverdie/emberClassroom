@@ -1,6 +1,14 @@
 <div name="droite" class="float-left" >
+  <div style="margin-left: 71px;color:#ffffff;">
+    <button onclick={{action (mut sortBy) 'ratingDesc'}}>Rating <DescIco /></button> ||
+    <button onclick={{action (mut sortBy) 'ratingAsc'}}>Rating <AscIco /></button> ||
+    <button onclick={{action (mut sortBy) 'titleDesc'}}>Title <DescIco /></button>  ||
+    <button onclick={{action (mut sortBy) 'titleAsc'}}>Title <AscIco /></button>
+
+    {{input type="text" value=searchTerm placeholder="Search..."}}
+  </div>
   <ul class="" style="width:500px;">
-    {{#each model.songs as |song|}}
+    {{#each sortedSongs as |song|}}
       <li class="list-reset text-xl leading-loose bg-teal-darkest rounded-lg mt-4 pl-8 pr-8 ml-8 shadow-lg">
         <div class="flex flex-row justify-between items-center">
           <div>{{song.title}}</div>
