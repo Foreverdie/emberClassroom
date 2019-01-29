@@ -12,6 +12,9 @@ Router.map(function() {
       this.route('songs');
     });
   });
+  this.route('signup');
+  this.route('login');
+  this.route('logout');
 });
 
 export default Router;

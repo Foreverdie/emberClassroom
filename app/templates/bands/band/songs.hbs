@@ -1,9 +1,9 @@
 <div name="droite" class="float-left" >
   <div style="margin-left: 71px;color:#ffffff;">
-    <button onclick={{action (mut sortBy) 'ratingDesc'}}>Rating <DescIco /></button> ||
-    <button onclick={{action (mut sortBy) 'ratingAsc'}}>Rating <AscIco /></button> ||
-    <button onclick={{action (mut sortBy) 'titleDesc'}}>Title <DescIco /></button>  ||
-    <button onclick={{action (mut sortBy) 'titleAsc'}}>Title <AscIco /></button>
+    {{#link-to (query-params sort="ratingDesc") }}Rating <DescIco />{{/link-to}} ||
+    {{#link-to (query-params sort="ratingAsc") }}Rating <AscIco />{{/link-to}} ||
+    {{#link-to (query-params sort="titleDesc") }}Rating <DescIco />{{/link-to}} ||
+    {{#link-to (query-params sort="titleAsc") }}Rating <AscIco />{{/link-to}}
 
     {{input type="text" value=searchTerm placeholder="Search..."}}
   </div>

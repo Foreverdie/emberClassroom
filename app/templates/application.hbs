@@ -1,8 +1,13 @@
 <div class="h-screen bg-teal-darker text-white w-full ">
   <div class="w-4/5 mx-auto">
     <div class="p-4 ml-8 mr-0 md-4 text-center text-xl border-b border-solid">
-      <h1>Rock & Roll <small class="test-xs">with Ember.js</small></h1>
+      <h1>Rock'n Roll <small class="test-xs">with Ember.js</small></h1>
 
+      {{#if session.isAuthenticated}}
+        <div>
+          {{session.data.authenticated.userEmail}} is logged in || {{link-to "Logout" "logout"}}
+        </div>
+      {{/if}}
     </div>
     {{outlet}}
   </div>
